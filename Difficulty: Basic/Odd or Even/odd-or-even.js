@@ -6,6 +6,6 @@
 class Solution {
     isEven(n) {
         // code here
-        return n % 2 == 0;
+        return (n & 1) == 0;
     }
 }
