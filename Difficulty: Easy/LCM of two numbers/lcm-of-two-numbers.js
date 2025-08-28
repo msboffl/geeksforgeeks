@@ -6,16 +6,13 @@
 
 class Solution {
     lcm(a, b) {
+        // code here
+        let max = Math.max(a, b);
+        let lcm = max;
         
-        let g = Math.max(a, b);
-        
-       
-        let s = Math.min(a, b); 
-    
-        for (let i = g; i <= a * b; i += g) {
-            if (i % s === 0)
-                return i;
+        while(true) {
+            if(lcm % a === 0 && lcm % b === 0) return lcm;
+            lcm++
         }
-        return a * b; 
     }
 }
