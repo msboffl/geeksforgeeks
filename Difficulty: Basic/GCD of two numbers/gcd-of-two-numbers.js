@@ -7,10 +7,8 @@
 class Solution {
     gcd(a, b) {
         // code here
-       while(b !== 0) {
-           [a, b] = [b, a % b]
-        }
-
-        return a; 
+        if(b === 0) return a;
+        
+        return this.gcd(b, a % b);
     }
 }
