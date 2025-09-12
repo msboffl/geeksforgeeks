@@ -6,21 +6,11 @@
 class Solution {
     floorSqrt(n) {
         // code here
-        let ans = 1;
-        let left = 0;
-        let right = n;
+        if(n === 0 || n === 1) return n;
         
-        while(left <= right) {
-            let mid = left + Math.floor((right - left) / 2)
-            
-            if(mid * mid <= n) {
-                ans = mid;
-                left = mid + 1
-            } else {
-                right = mid - 1
-            }
-        }
+        let r = 1;
+        while(r * r <= n) r++;
         
-        return ans;
+        return r-1;
     }
 }
