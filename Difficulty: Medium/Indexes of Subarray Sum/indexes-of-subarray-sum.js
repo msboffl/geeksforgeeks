@@ -12,6 +12,7 @@ class Solution {
             let sum = 0;
             for(let j = i; j < arr.length; j++) {
                 sum += arr[j];
+                
                 if(sum === target) return [i+1, j+1];
             }
         }
