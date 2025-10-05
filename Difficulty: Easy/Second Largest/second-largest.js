@@ -1,15 +1,18 @@
 class Solution {
     getSecondLargest(arr) {
-        // code here
         const n = arr.length;
-        arr.sort((a, b) => a-b);
-        
+        // code here
+        arr.sort((a, b) => a - b);
+        // console.log(arr);
+        const firstLarge = arr[n-1];
+        let secondLarge = -1;
         for(let i = n-2; i >= 0; i--) {
-            if(arr[i] != arr[n-1]) {
-                return arr[i];
+            if(firstLarge !== arr[i]) {
+                secondLarge = arr[i];
+                break;
             }
         }
         
-        return -1;
+        return secondLarge;
     }
 }
