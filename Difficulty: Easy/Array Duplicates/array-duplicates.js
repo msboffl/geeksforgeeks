@@ -6,17 +6,15 @@ class Solution {
     findDuplicates(arr) {
         // code here
         const n = arr.length;
-        const ans = [];
+        const freq = new Array(n+1).fill(0);
+        const ans = []
         
-        arr.sort((a, b) => a - b);
+        for(let num of arr) {
+            freq[num]++;
+        }
         
-        for(let i = 1; i < n; i++) {
-            if(arr[i] === arr[i-1]) {
-                if (ans.length === 0 || 
-                    ans[ans.length - 1] !== arr[i]) {
-                    ans.push(arr[i]);
-                }
-            }
+        for(let i = 1; i < freq.length; i++) {
+            if(freq[i] >= 2) ans.push(i);
         }
         
         return ans;
