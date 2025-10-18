@@ -6,14 +6,15 @@ class Solution {
     prefSum(arr) {
         // code here
         const n = arr.length;
-        const ans = new Array(n);
+        const prefix = [];
         
-        ans[0] = arr[0];
+        prefix[0] = arr[0];
         
         for(let i = 1; i < n; i++) {
-            ans[i] = ans[i-1] + arr[i];
+            prefix[i] = prefix[i-1] + arr[i]
         }
         
-        return ans;
+        return prefix;
     }
+    
 }
