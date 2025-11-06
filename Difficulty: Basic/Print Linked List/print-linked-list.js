@@ -13,10 +13,12 @@ class Solution {
     printList(head) {
         // code here
         const ans = [];
-        let temp = head;
-        while(temp != null) {
-            ans.push(temp.data);
-            temp = temp.next;
+        
+        let curr = head;
+        
+        while(curr !== null) {
+            ans.push(curr.data);
+            curr = curr.next;
         }
         
         return ans;
