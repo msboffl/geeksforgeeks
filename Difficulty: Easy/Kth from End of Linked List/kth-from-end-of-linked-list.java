@@ -12,22 +12,22 @@ class Solution {
     // the end of a linked list.
     int getKthFromLast(Node head, int k) {
         // Your code here
-        Node temp = head;
+        if(head == null) return -1;
         
-        int length = 0;
+        Node slow = head;
+        Node fast = head;
         
-        while(temp != null) {
-            length++;
-            temp = temp.next;
+        for(int i = 0; i < k; i++) {
+            if(fast == null) return -1;
+            
+            fast = fast.next;
         }
         
-        if(length < k) return -1;
-        
-        temp = head;
-        for(int i = 1; i < length - k + 1; i++) {
-            temp = temp.next;
+        while(fast != null) {
+            slow = slow.next;
+            fast = fast.next;
         }
         
-        return temp.data;
+        return slow.data;
     }
 }
